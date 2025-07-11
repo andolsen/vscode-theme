@@ -1,4 +1,4 @@
-# Andreas Do color / icons theme
+# Andreas DO color / icons theme
 
 ## Based on poimandres color theme and helium icon theme
 
