@@ -4,7 +4,7 @@
 
 ### Install:
 
-1. git clone https://github.com/andolsen/vscode-theme
+1. <code>git clone https://github.com/andolsen/vscode-theme</code>
 
 2. Open VS Code
 3. Press Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (Mac)
