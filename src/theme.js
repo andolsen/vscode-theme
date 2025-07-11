@@ -25,6 +25,13 @@ const base = {
     white: '#ffffff',
     black: '#000000',
     transparent: '#00000000',
+
+    // Custom colors from settings.json
+    customSidebarForeground: '#d4d4d4',
+    customGitModified: '#00c9a7',
+    customUnnecessaryCodeBorder: '#32AE85',
+    customComponentColor: '#f49fff',
+    customCommentColor: '#a7a7a7',
   },
   styles: {
     fontStyle: 'italic',
@@ -43,6 +50,12 @@ const storm = {
     bg: '#252b37',
     selection: '#818cc425',
     black: '#101010',
+    // Keep the custom colors from base
+    customSidebarForeground: '#d4d4d4',
+    customGitModified: '#00c9a7',
+    customUnnecessaryCodeBorder: '#32AE85',
+    customComponentColor: '#f49fff',
+    customCommentColor: '#a7a7a7',
   },
 }
 
@@ -54,7 +67,7 @@ const stormNoitalics = {
 
 function schema({ colors, styles }) {
   return `{
-    "name": "poimandres dark theme",
+    "name": "Andreas DO Theme",
     "type": "dark",
     "colors": {
       "activityBar.background": "${colors.bg}",
@@ -150,6 +163,7 @@ function schema({ colors, styles }) {
       "editorPane.background": "${colors.bg}",
       "editorRuler.foreground": "${colors.offWhite}10",
       "editorUnnecessaryCode.opacity": "${colors.black}aa",
+      "editorUnnecessaryCode.border": "${colors.customUnnecessaryCodeBorder}",
       "editorWarning.foreground": "${colors.brightYellow}",
       "editorWhitespace.foreground": "${colors.focus}",
       "editorWidget.border": "${colors.gray}",
@@ -181,7 +195,7 @@ function schema({ colors, styles }) {
       "scrollbarSlider.hoverBackground": "${colors.gray}25",
       "selection.background": "${colors.gray}",
       "sideBar.background": "${colors.bg}",
-      "sideBar.foreground": "${colors.darkerGray}",
+      "sideBar.foreground": "${colors.customSidebarForeground}",
       "sideBarSectionHeader.background": "${colors.bg}",
       "sideBarTitle.foreground": "${colors.gray}",
       "statusBar.background": "${colors.bg}",
@@ -296,7 +310,7 @@ function schema({ colors, styles }) {
       "gitDecoration.conflictingResourceForeground": "${colors.hotRed}",
       "gitDecoration.deletedResourceForeground": "${colors.hotRed}",
       "gitDecoration.ignoredResourceForeground": "${colors.darkerGray}70",
-      "gitDecoration.modifiedResourceForeground": "${colors.lightBlue}",
+      "gitDecoration.modifiedResourceForeground": "${colors.customGitModified}",
       "gitDecoration.renamedResourceForeground": "${colors.brightMint}",
       "gitDecoration.stageDeletedResourceForeground": "${colors.hotRed}",
       "gitDecoration.stageModifiedResourceForeground": "${colors.lightBlue}",
@@ -950,7 +964,7 @@ function schema({ colors, styles }) {
       },
       {
         "scope": [
-          "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+          "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
         ],
         "settings": {
           "foreground": "${colors.offWhite}"
@@ -1237,6 +1251,55 @@ function schema({ colors, styles }) {
         "scope": ["log.verbose"],
         "settings": {
           "foreground": "${colors.gray}"
+        }
+      },
+      {
+        "scope": ["support.class.component"],
+        "settings": {
+          "foreground": "${colors.customComponentColor}"
+        }
+      },
+      {
+        "scope": ["entity.name.tag.tsx"],
+        "settings": {
+          "foreground": "${colors.brightMint}"
+        }
+      },
+      {
+        "scope": ["entity.other.attribute-name.tsx"],
+        "settings": {
+          "foreground": "${colors.desaturatedBlue}"
+        }
+      },
+      {
+        "scope": ["string.quoted.double.ts"],
+        "settings": {
+          "foreground": "${colors.brightMint}"
+        }
+      },
+      {
+        "scope": ["string.quoted.double.tsx", "string.template.tsx"],
+        "settings": {
+          "foreground": "${colors.brightMint}"
+        }
+      },
+      {
+        "scope": ["meta.jsx.children.tsx"],
+        "settings": {
+          "foreground": "${colors.white}"
+        }
+      },
+      {
+        "scope": [
+          "punctuation.definition.comment.tsx",
+          "comment.line.double-slash.tsx",
+          "punctuation.definition.comment.ts",
+          "comment.line.double-slash.ts",
+          "comment.block.tsx"
+        ],
+        "settings": {
+          "foreground": "${colors.customCommentColor}",
+          "fontStyle": "italic"
         }
       }
     ]
