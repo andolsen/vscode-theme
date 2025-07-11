@@ -2,7 +2,7 @@
 
 ## Based on poimandres color theme and helium icon theme
 
-###Install:
+### Install:
 
 1. git clone https://github.com/andolsen/vscode-theme
 
