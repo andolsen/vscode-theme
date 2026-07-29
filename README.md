@@ -1,6 +1,6 @@
 # Color / icons theme
 
-## Based on poimandres color theme and helium icon theme
+## Based on poimandres color theme and made to work with [Flow Icons](https://github.com/thang-nm/Flow-Icons)
 
 ### Install:
 
